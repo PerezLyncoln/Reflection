@@ -1,0 +1,157 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body {
+    background: url(5Centimeters.gif) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.title {
+    margin: auto;
+    margin-top: 30px;
+
+    border-style: solid;
+    border-radius: 30px;
+    border-width: 10px;
+    border-color: #87A2FF;
+
+    width: 800px;
+    background-color: #C4D7FF;
+}
+
+h1, h3 {
+    text-align: center;
+}
+h1 {
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 80px;
+
+    margin-top: 20px;
+    margin-bottom: 25px;
+
+    animation: glow;
+    animation-duration: 1.2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+
+    color: #fd8750;
+
+}
+h3 {
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 20px;
+
+    color: #fd8750;
+}
+
+form {
+    text-align: center;
+    margin: auto;
+    width: 300px;
+
+    border-style: solid;
+    border-radius: 30px;
+    border-width: 10px;
+    border-color: #87A2FF;
+    background-color: #C4D7FF;
+}
+
+label, input, button {
+    margin: 10px 0px;
+    text-align: center;
+
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 20px;
+}
+
+button {
+    margin: 5px 5px 10px 5px;
+    width: 100px;
+    color: #fd8750;
+
+    border-style: solid;
+    border-width: 5px;
+    border-color: #fd8750;
+    border-radius: 50px;
+    background-color: #FFF4B5;
+
+    transition-duration: 0.5s;
+    
+}
+
+input {
+    width: 200px;
+    border-width: 5px;
+    border-color: #fd8750;
+    border-radius: 50px;
+    background-color: #FFF4B5;
+
+    color: #fd8750;
+}
+button:hover {
+    transform: translateY(-5px);
+}
+
+
+.output {
+    background-color: #C4D7FF;
+    border-style: solid;
+    border-radius: 10px;
+    border-width: 10px;
+    border-color: #87A2FF;
+
+    width: 1300px;
+    margin: auto;
+    padding: 50px;
+
+    text-align: justify;
+
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+    font-size: 22px;
+}
+
+.output2 {
+    background-color: #C4D7FF;
+    border-style: solid;
+    border-width: 10px;
+    border-radius: 10px;
+    border-color: #87A2FF;
+    
+    width: 800px;
+    margin: auto;
+    padding: 50px;
+
+    text-align: center;
+    
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+    font-size: 20px;
+}
+
+/* Animations */
+@keyframes glow {
+    from {
+      text-shadow: 0 0 20px #3c4cd8;
+    }
+    to {
+      text-shadow: 0 0 30px #f0251e, 0 0 20px #f89e18;
+    }
+  }

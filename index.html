@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css">
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <!-- Title -->
+    <div class="title">
+    <h1>MY SIMPLE REFLECTION</h1>
+    <h3>but before that, answer the simple question first :)</h3> <br> </div> <br>
+
+    <!-- Form -->
+    <div>
+    <form id="answerform">
+        <label>1 + 1 = ?</label> <br>
+        <input type="number" id="answer"> <br>
+        <button type="button" id="submit">Submit</button>
+    </form> 
+    </div><br>
+
+    <!-- Result Boxes -->
+    <div id="output" class="output"></div> <br>
+
+    <div id="pythonscript" class="output2"></div>    
+
+    <!-- Pyscript  -->
+    <py-script>
+        #Function for knowing if the answer is correct or not
+        def formanswer(answer):
+            answer =  int(Element("answer").element.value)
+            if answer == 2:
+                result =  """
+                First of all, what is RA. 10173 or also known as “Data Privacy Data Act of 2012”? It is a law that was established in the Philippines to safeguards the personal information of people any kinds of information and communication systems in both Private and Public sectors. The law also regulates the handling of information in terms of data collection, processing, storage, and protection in order for the Philippines fit into international standards. 
+                <br> So how can I as a student reflect on these information and the things that I learned during the Data Privacy campaign that was held in school?  Firstly, I have learned that my personal data can be stolen as it can take on many different forms, wallets, IDs, certificates, internet,  and any other type as long it EXIST, so I have to be super careful as these personal information of mine can be used in a malicious way just like the Personal Golden Rule of the guest speaker that he shared, I can not clearly remember it but it is something about treating devices as another life form, it could see, hear, feel and speak, being able to work with information and if ever this device gets mishandled, all of the data or information that it knows can be exploited to be used in some bad way like using my name to be used in frauds, identity theft, scamming, phishing, smishing, any more kinds of cyber crimes, these could potentially harm the data subject which the information came from.  Another learning is that as a possible data subject, I have the rights to my information such as being informed about how my data is being used or processed, accessing my personal information that the person or organization which both referred to as personal information controller,  have took, being able to correct my personal information If there were some kind of error that either I have wrongly gave or inputted by the group, being able to withdraw my personal information from the group which took it. Knowing my rights, it helps me to ensure my privacy and that my data is safely protected and preventing it to be misused or exploited by other people. Lastly, from what I could retain is the obligations, accountability, and responsibility  of personal information controllers on how they handle, process, and store data of the people. They are obligated and accounted to protect and safeguard personal informations through any means so that it will not get stolen if there were any attempt of data breach to the information and communication systems. If any personal information, sensitive or not, were to be stolen, the personal information collector shall notify the National Privacy Commission or NPC that there have been an unauthorized access of personal informations by an outside group with no permission. The personal information controller is mainly responsible for restricting the access of personal information of the people off-site with exceptions, I can only remember one condition and that is that the controller is limited to 1000 information that he or she can handle.  
+                <br> Being able to understand the function of the Data Privacy Act, helps me to become more aware of my rights which prevents the misuse of my personal information. With these knowledge in mind, I should refine on how I handle my personal information as my data is vulnerable to get stolen by hackers since I do not follow some of the advices I have learned from previous years. Lastly, I shall inform others on the importance of the Data Privacy Act as the future will continue to utilize internet and technology 	
+                """
+                word_lengths = count_word_lengths(result)  #Calls for the function that calculates the length of each word
+
+                total_words = len(word_lengths)  #Simple function to count all of the items in the list we have created previously
+                
+                word_info = f"<p>Every each word in order has a length of:<br> {word_lengths} <br><br></p>"
+                word_info += f"<p>There is a total words of: {total_words}</p>"
+
+                #Displays the reflection I made
+                Element("output").element.innerHTML = result 
+
+                #Displays the simple python functions
+                Element("pythonscript").element.innerHTML = word_info
+            else:
+                Element("output").element.innerHTML = "<p>You are wrong :(</p>"
+                Element("pythonscript").element.innerHTML = ""  # Clear the word info div if wrong answer
+
+        #Function for counting the length of each letters, numbers, and symbols in each word
+        def count_word_lengths(text):
+            words = text.split()  #Split all of words so that we can count each length for the following len function
+            lengths = list(map(len, words))  #Using length function to count every word we have splitted earlier and puts it into a list
+        
+            return lengths  # Return the list of word lengths
+        #Button function to activate formanswer function
+        Element("submit").element.onclick = formanswer
+    </py-script>
+</body>
+</html>
